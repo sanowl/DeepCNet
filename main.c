@@ -375,7 +375,7 @@ void update_weights(NeuralNetwork* nn, Optimizer* optimizer, double** delta, Reg
                     grad += reg->l1_lambda * (nn->weights[l][i][j] > 0 ? 1 : -1);
                 }
                 
-                switch (optimizer->type) {
+               switch (optimizer->type) {
                     case SGD:
                         nn->weights[l][i][j] += lr_t * grad;
                         break;
